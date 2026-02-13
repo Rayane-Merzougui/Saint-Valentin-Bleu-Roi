@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --royal-blue: #4169E1;
+  --off-white: #F5F5F7;
+  --soft-gold: #D4AF37;
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  background-color: var(--off-white);
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+.bg-royal-blue {
+  background-color: var(--royal-blue);
+}
+
+.text-royal-blue {
+  color: var(--royal-blue);
+}
+
+.border-royal-blue {
+  border-color: var(--royal-blue);
+}
+
+/* Custom animations */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--royal-blue);
+  animation: typewriter 3s steps(40, end);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--royal-blue);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #318CE7;
+}
