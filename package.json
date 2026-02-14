@@ -23,7 +23,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.19.33",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.24",
@@ -56,7 +56,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Rayane-Merzougui/Saint-Valentin-Bleu-Roi/issues"
   },
