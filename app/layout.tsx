@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-// Using standard Google Fonts via Next.js font optimization would be better, 
+// Using standard Google Fonts via Next.js font optimization would be better,
 // but since the user provided local font setup, I'll stick to a clean approach.
 // I will use standard system fonts that match the requested style if local files aren't provided,
 // or I can use next/font/google which is standard for Next.js.
 
-import { Playfair_Display as Playfair, Montserrat as Mont } from 'next/font/google';
+import {
+  Playfair_Display as Playfair,
+  Montserrat as Mont,
+} from "next/font/google";
 
 const playfair = Playfair({
-  subsets: ['latin'],
-  variable: '--font-playfair',
+  subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 const montserrat = Mont({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
+  subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {

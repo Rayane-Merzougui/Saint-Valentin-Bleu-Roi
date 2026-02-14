@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Mail, Play, Pause, ChevronDown, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Heart, Mail, Play, Pause, ChevronDown, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // --- CONFIGURATION PERSONNALISABLE ---
 const CONFIG = {
   prenom: "Ma Chérie",
   surnom: "Mon Amour",
-  dateRencontre: "2023-06-15", // Format YYYY-MM-DD
+  dateRencontre: "2025-03-15", // Format YYYY-MM-DD
   lettre: `Ma chérie,
 
 Il y a des personnes qui traversent ta vie sans laisser de trace, et puis il y a toi. Toi qui as tout changé dès le premier regard.
@@ -49,8 +49,8 @@ Je t'aime, infiniment.`,
     "Ta générosité sans limites",
     "Parce que tu rends ma vie meilleure chaque jour",
     "Pour tous les souvenirs que nous avons déjà créés",
-    "Pour tous ceux qu'il nous reste à vivre ensemble"
-  ]
+    "Pour tous ceux qu'il nous reste à vivre ensemble",
+  ],
 };
 
 export default function ValentinePage() {
@@ -67,11 +67,13 @@ export default function ValentinePage() {
     // Calcul des jours d'amour
     const start = new Date(CONFIG.dateRencontre);
     const now = new Date();
-    const diff = Math.floor((now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+    const diff = Math.floor(
+      (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)
+    );
     setDaysCount(diff);
 
     // Récupérer les cœurs cliqués du localStorage
-    const saved = localStorage.getItem('clickedHearts');
+    const saved = localStorage.getItem("clickedHearts");
     if (saved) setClickedHearts(JSON.parse(saved));
   }, []);
 
@@ -79,7 +81,7 @@ export default function ValentinePage() {
     if (!clickedHearts.includes(index)) {
       const newClicked = [...clickedHearts, index];
       setClickedHearts(newClicked);
-      localStorage.setItem('clickedHearts', JSON.stringify(newClicked));
+      localStorage.setItem("clickedHearts", JSON.stringify(newClicked));
     }
     setActiveReason(CONFIG.raisons[index]);
   };
@@ -105,10 +107,14 @@ export default function ValentinePage() {
   return (
     <main className="min-h-screen selection:bg-royal-blue/30">
       {/* Audio Element (Hidden) */}
-      <audio ref={audioRef} loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+      <audio
+        ref={audioRef}
+        loop
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      />
 
       {/* Floating Music Control */}
-      <button 
+      <button
         onClick={toggleAudio}
         className="fixed bottom-6 right-6 z-50 p-3 bg-white/80 backdrop-blur-md rounded-full shadow-lg border border-royal-blue/20 text-royal-blue hover:scale-110 transition-transform"
       >
@@ -127,25 +133,27 @@ export default function ValentinePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 
+          <h1
             onClick={handleTitleClick}
             className="text-5xl md:text-7xl font-serif text-royal-blue mb-4 cursor-pointer select-none"
           >
             Pour toi, {CONFIG.prenom}
           </h1>
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-light">
-            Un petit coin du web rien que pour nous, pour te rappeler à quel point tu es spéciale.
+            Un petit coin du web rien que pour nous, pour te rappeler à quel
+            point tu es spéciale.
           </p>
 
           <AnimatePresence>
             {showEasterEgg && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 className="text-royal-blue font-serif italic mb-4"
               >
-                ✨ Tu as trouvé le message secret : Je t'aime plus que tout au monde ! ✨
+                ✨ Tu as trouvé le message secret : Je t'aime plus que tout au
+                monde ! ✨
               </motion.div>
             )}
           </AnimatePresence>
@@ -162,7 +170,7 @@ export default function ValentinePage() {
           </button>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 text-royal-blue/40"
@@ -180,17 +188,20 @@ export default function ValentinePage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="relative w-full max-w-2xl bg-[#FDFBF7] p-8 md:p-12 rounded-sm shadow-2xl border-[12px] border-white"
-              style={{ boxShadow: '0 0 0 1px rgba(0,0,0,0.05), 0 20px 50px rgba(0,0,0,0.1)' }}
+              style={{
+                boxShadow:
+                  "0 0 0 1px rgba(0,0,0,0.05), 0 20px 50px rgba(0,0,0,0.1)",
+              }}
             >
-              <button 
+              <button
                 onClick={() => setIsLetterOpen(false)}
                 className="absolute top-4 right-4 text-slate-400 hover:text-royal-blue transition-colors"
               >
                 Fermer
               </button>
-              
+
               <div className="font-serif text-slate-800 leading-relaxed whitespace-pre-line text-lg md:text-xl">
-                {CONFIG.lettre.split('').map((char, i) => (
+                {CONFIG.lettre.split("").map((char, i) => (
                   <motion.span
                     key={i}
                     initial={{ opacity: 0 }}
@@ -201,7 +212,7 @@ export default function ValentinePage() {
                   </motion.span>
                 ))}
               </div>
-              
+
               <div className="mt-12 flex justify-end">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -209,8 +220,13 @@ export default function ValentinePage() {
                   transition={{ delay: CONFIG.lettre.length * 0.02 + 0.5 }}
                   className="text-right"
                 >
-                  <p className="font-serif italic text-royal-blue text-xl">Ton {CONFIG.surnom}</p>
-                  <Heart className="inline-block text-royal-blue fill-royal-blue mt-2" size={20} />
+                  <p className="font-serif italic text-royal-blue text-xl">
+                    Ton {CONFIG.surnom}
+                  </p>
+                  <Heart
+                    className="inline-block text-royal-blue fill-royal-blue mt-2"
+                    size={20}
+                  />
                 </motion.div>
               </div>
             </motion.div>
@@ -221,8 +237,12 @@ export default function ValentinePage() {
       {/* Section 2: Reasons */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-royal-blue mb-4">Tant de raisons de t'aimer...</h2>
-          <p className="text-slate-500 mb-16">Clique sur un cœur pour découvrir une raison</p>
+          <h2 className="text-4xl md:text-5xl font-serif text-royal-blue mb-4">
+            Tant de raisons de t'aimer...
+          </h2>
+          <p className="text-slate-500 mb-16">
+            Clique sur un cœur pour découvrir une raison
+          </p>
 
           <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-4 md:gap-6">
             {CONFIG.raisons.map((_, index) => (
@@ -233,23 +253,27 @@ export default function ValentinePage() {
                 onClick={() => handleHeartClick(index)}
                 className={cn(
                   "aspect-square flex items-center justify-center rounded-2xl transition-all duration-500",
-                  clickedHearts.includes(index) 
-                    ? "bg-royal-blue/10 text-royal-blue border-2 border-royal-blue/20" 
+                  clickedHearts.includes(index)
+                    ? "bg-royal-blue/10 text-royal-blue border-2 border-royal-blue/20"
                     : "bg-slate-50 text-slate-300 hover:text-royal-blue/40"
                 )}
               >
-                <Heart 
-                  size={24} 
-                  className={cn(clickedHearts.includes(index) && "fill-royal-blue")} 
+                <Heart
+                  size={24}
+                  className={cn(
+                    clickedHearts.includes(index) && "fill-royal-blue"
+                  )}
                 />
               </motion.button>
             ))}
           </div>
 
           <div className="mt-12">
-            <button 
+            <button
               onClick={() => {
-                const randomIdx = Math.floor(Math.random() * CONFIG.raisons.length);
+                const randomIdx = Math.floor(
+                  Math.random() * CONFIG.raisons.length
+                );
                 handleHeartClick(randomIdx);
               }}
               className="text-royal-blue border-b border-royal-blue/30 pb-1 hover:border-royal-blue transition-all"
@@ -281,23 +305,29 @@ export default function ValentinePage() {
       <section className="py-24 px-4 bg-[#F5F5F7] text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <h3 className="text-2xl text-slate-500 uppercase tracking-widest mb-4">Notre Histoire</h3>
+            <h3 className="text-2xl text-slate-500 uppercase tracking-widest mb-4">
+              Notre Histoire
+            </h3>
             <div className="text-6xl md:text-8xl font-serif text-royal-blue mb-2">
               {daysCount}
             </div>
-            <p className="text-xl text-slate-600 italic">jours de bonheur à tes côtés</p>
+            <p className="text-xl text-slate-600 italic">
+              jours de bonheur à tes côtés
+            </p>
           </div>
 
           <div className="space-y-8">
-            <h2 className="text-4xl font-serif text-slate-800">Et toi, tu m'aimes ?</h2>
+            <h2 className="text-4xl font-serif text-slate-800">
+              Et toi, tu m'aimes ?
+            </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <button 
+              <button
                 onClick={() => alert("Je le savais ! ❤️")}
                 className="px-8 py-3 bg-royal-blue text-white rounded-full hover:scale-105 transition-transform shadow-lg shadow-royal-blue/20"
               >
                 Oui
               </button>
-              <button 
+              <button
                 onClick={() => alert("Moi aussi, plus que tout ! 🥰")}
                 className="px-8 py-3 bg-white text-royal-blue border border-royal-blue/20 rounded-full hover:scale-105 transition-transform shadow-sm"
               >
