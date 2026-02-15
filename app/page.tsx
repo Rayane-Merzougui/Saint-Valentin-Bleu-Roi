@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 // --- CONFIGURATION PERSONNALISABLE ---
 const CONFIG = {
-  prenom: "Ma 7bouba ",
-  surnom: "Mon Amour",
+  prenom: "Mon Amour ",
+  surnom: "Rayane",
   dateRencontre: "2025-03-15", // Format YYYY-MM-DD
   lettre: `Abir,
 
