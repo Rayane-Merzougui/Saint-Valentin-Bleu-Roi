@@ -7,49 +7,49 @@ import { cn } from "@/lib/utils";
 
 // --- CONFIGURATION PERSONNALISABLE ---
 const CONFIG = {
-  prenom: "Ma Chérie",
+  prenom: "Ma 7bouba ",
   surnom: "Mon Amour",
   dateRencontre: "2025-03-15", // Format YYYY-MM-DD
-  lettre: `Ma chérie,
+  lettre: `Abir,
 
-Il y a des personnes qui traversent ta vie sans laisser de trace, et puis il y a toi. Toi qui as tout changé dès le premier regard.
+Kayn bniyadem ydokhlo f 7yatk w ymchiw bla ma ykheliw hata 2atar ghi fato w sayi, W kayn nti . Nti li bdltili ga3 7yati m nhar li t3arft bik.
 
-Chaque moment passé à tes côtés est un cadeau que je chéris. Ta présence illumine mes journées les plus sombres et ton rire est la plus belle des mélodies. Je voulais profiter de cette Saint-Valentin pour te dire, avec ces quelques mots, à quel point tu comptes pour moi.
+Kol la7da rani mfwtha m3ak b nisba liya rah cadeau mdholi rbi. Nkon mfwt nhar k7al khas ghi nchikh m3ak chwiya bach dnya ttnwr , w je sais ma ntfahmoch f la music mais dahka ta3k la plus belle mélodie b nisba liya. had 3id l7ob chtah occasion bach n3abrlk 3la lmacha3ir taw3i.
 
-Tu es ma confidente, ma meilleure amie, et mon plus grand amour. Merci d'être qui tu es, tout simplement.
+Nti 7bibti , 3ayniya , sahabti , w kolchi f 7yati. w merci 3la li ziyntili 7yati .
 
-Je t'aime, infiniment.`,
+Je t'aime, du plus profond de mon coeur.`,
   raisons: [
-    "La façon dont tes yeux pétillent quand tu ris",
-    "Ta passion débordante pour tout ce que tu entreprends",
-    "Comment tu t'endors toujours sur mon épaule au bout de 5 minutes de film",
-    "Ta voix douce qui m'apaise le matin",
-    "La manière dont tu tiens ma main quand on marche",
-    "Ton sens de l'humour unique qui me fait toujours craquer",
-    "Ta bienveillance naturelle envers tout le monde",
-    "La force de ton caractère et ton ambition",
-    "Tes petits messages inattendus dans la journée",
-    "Ta façon de froncer le nez quand tu réfléchis",
-    "Le parfum de tes cheveux",
-    "Ton courage face aux défis",
-    "La complicité que nous partageons sans même parler",
-    "Ta cuisine (même quand c'est un peu brûlé !)",
-    "Ton soutien inconditionnel dans mes projets",
-    "La lumière que tu apportes dans chaque pièce où tu entres",
-    "Ta patience infinie avec moi",
-    "Nos discussions qui durent jusqu'au bout de la nuit",
-    "Ta curiosité pour le monde qui nous entoure",
+    "La façon ta3 3aynik ki ybriyiw ki tdahki",
+    "l7amas ta3k ki nkono f sujet tbghih",
+    "Ki nkono chaykhin w f drba tskri hadi tjr dahakni",
+    "la voix ta3k tzid ta3jbni a chauque fois nsma3ha",
+    "ki ta7achmi ki nkono m3a ba3d hadi tjr cute",
+    "tjr ta3arfi kich dahkini (lprblm machi bl3ani ms dahkini)",
+    "9lbk byed w ch7al ma nzid na3arfah yzid ybanli byed",
+    "lcaractér ta3k 9wiy",
+    "Ki tkoni nayda m rgad w tziftili vcl tbani ki lbébé ms ta3jbni",
+    "Manich 3arf 3lach ms nifk ybouji ki tkon tkhemi w chaba",
+    "l2ana9a ta3k tjr tktlni",
+    "Chaj3a ta3k tkhla3ni",
+    "tfahmini w nfahmk khtrat bla hadra",
+    "style ta3k f lbsa howa le meilleur li chtah f 7yati",
+    "Dayra fiya confience w 3arfa les capacité ta3i",
+    "golthalk bzf ms dahka ta3k tnwr ga3 dnya",
+    "tgoli bli ma3andkch sbr ms prouvitili bli 3aaandk",
+    "chyakhat tawa3na f lil (afdal haja f nhari)",
+    "lfodol ta3k , tjr tbghi tt3almi",
     "Simplement parce que tu es TOI.",
-    "Ta manière de me regarder quand tu penses que je ne te vois pas",
-    "Ton intelligence qui m'impressionne chaque jour",
-    "La douceur de tes baisers",
-    "Ton style et ton élégance naturelle",
-    "La façon dont tu prends soin de nous",
-    "Ton rire communicatif",
-    "Ta générosité sans limites",
+    "ki nkono m3a ba3d khtrat tchofi fiya 7asbtni maranich nchof fik ms si",
+    "l'intelligence ta3k m3a les meilleurs",
+    "l7nana ta3k",
+    "ki diri lmaquillage tweli to7fa faniya",
+    "b la façon ta3k jss ms mthalya fiya",
+    "tellement tdahki bzf kol dahka ta3k 3andha ma3na",
+    "lmachoir ta3k ki tbda trjf ki tgbdi dahka",
     "Parce que tu rends ma vie meilleure chaque jour",
-    "Pour tous les souvenirs que nous avons déjà créés",
-    "Pour tous ceux qu'il nous reste à vivre ensemble",
+    "Chaque souvenir rah 3andi m3ak",
+    "W mzl nzido ndiro des souvenir",
   ],
 };
 
@@ -107,11 +107,7 @@ export default function ValentinePage() {
   return (
     <main className="min-h-screen selection:bg-royal-blue/30">
       {/* Audio Element (Hidden) */}
-      <audio
-        ref={audioRef}
-        loop
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      />
+      <audio ref={audioRef} loop src="/Assets/Shivers.mp3" />
 
       {/* Floating Music Control */}
       <button
@@ -187,7 +183,7 @@ export default function ValentinePage() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl bg-[#FDFBF7] p-8 md:p-12 rounded-sm shadow-2xl border-[12px] border-white"
+              className="relative w-full max-w-2xl bg-[#FDFBF7] p-4 sm:p-6 md:p-8 lg:p-12 rounded-sm shadow-2xl border-[6px] sm:border-[8px] md:border-[12px] border-white max-h-[90vh] overflow-y-auto"
               style={{
                 boxShadow:
                   "0 0 0 1px rgba(0,0,0,0.05), 0 20px 50px rgba(0,0,0,0.1)",
@@ -200,7 +196,7 @@ export default function ValentinePage() {
                 Fermer
               </button>
 
-              <div className="font-serif text-slate-800 leading-relaxed whitespace-pre-line text-lg md:text-xl">
+              <div className="font-serif text-slate-800 leading-relaxed whitespace-pre-line text-base sm:text-lg md:text-xl">
                 {CONFIG.lettre.split("").map((char, i) => (
                   <motion.span
                     key={i}
@@ -322,13 +318,13 @@ export default function ValentinePage() {
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <button
-                onClick={() => alert("Je le savais ! ❤️")}
+                onClick={() => alert("3rftha! ❤️")}
                 className="px-8 py-3 bg-royal-blue text-white rounded-full hover:scale-105 transition-transform shadow-lg shadow-royal-blue/20"
               >
                 Oui
               </button>
               <button
-                onClick={() => alert("Moi aussi, plus que tout ! 🥰")}
+                onClick={() => alert("Hata ana, Ktr mli raki 7asba ! 🥰")}
                 className="px-8 py-3 bg-white text-royal-blue border border-royal-blue/20 rounded-full hover:scale-105 transition-transform shadow-sm"
               >
                 Oui évidemment
@@ -338,7 +334,7 @@ export default function ValentinePage() {
 
           <footer className="mt-32 text-slate-400 text-sm">
             <p>Fait avec tout mon amour pour {CONFIG.prenom}</p>
-            <p className="mt-2">Saint-Valentin 2025</p>
+            <p className="mt-2">Saint-Valentin 2026</p>
           </footer>
         </div>
       </section>
